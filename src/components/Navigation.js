@@ -2,21 +2,22 @@ import React from 'react';
 
 export default class Navigation extends React.Component {
     render() {
-        let navBtns = [],
-            slides = (this.props.slides && this.props.slides.length) ? this.props.slides : [];
+        let navBtns = [];
 
-        for (let i = 0; i < 6; i++) {
+        for (let i = 0, pn = this.props.pageNumber; i < pn; i++) {
             navBtns.push(
-                <div className="navigation-btn" >
-					<span className="navigation-page" ></span>
-				</div>
+                <div key={i} className="navigation-btn" >
+                    <span className={(this.props.active === i)? 'navigation-page active': 'navigation-page'} 
+                    onClick={this.props.onUserClick.bind(this, i)}>
+                    </span>
+                </div>
             );
         }
 
         return (
-            <div className="navigation" onClick={this.props.handleClick}>
-            	{navBtns}
-			</div>
+            <div className="navigation" >
+                {navBtns}
+            </div>
         );
     }
 }

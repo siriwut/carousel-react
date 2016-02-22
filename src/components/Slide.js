@@ -2,9 +2,14 @@ import React from 'react';
 
 export default class Slide extends React.Component {
     render() {
+        let photo = null,
+            photos = this.props.photos;
+
+        photo = photos[this.props.page] || {};
+
         return (
             <div className="slide" >
-            	<img className="photo" src="http://cdn.playbuzz.com/cdn/0079c830-3406-4c05-a5c1-bc43e8f01479/7dd84d70-768b-492b-88f7-a6c70f2db2e9.jpg" />
+            	<img className="photo" src={photo.url || '' }  />
 			</div>
         );
     }

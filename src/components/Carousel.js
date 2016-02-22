@@ -4,16 +4,42 @@ import Slide from './Slide';
 import Navigation from './Navigation';
 
 
-class Carousel extends React.Component {
+export default class Carousel extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            page: 0
+        };
+    }
+
+    tick() {
+        (this.state.page === this.props.photos.length - 1) ?
+        this.setState({ page: 0 }): this.setState({ page: this.state.page + 1 });
+    }
+
+    changePage(page) {
+        this.setState({ page: page });
+    }
+
+    componentDidMount() {
+        this.interval = setInterval(this.tick.bind(this), 2000);
+    }
+
+    componentWillUnmount() {
+        clearInterval(this.interval);
+    }
+
     render() {
         return (
             <div className="carousel" >
-                <Slide />
+                <Slide photos={this.props.photos} page={this.state.page} />
                 <Caption />
-                <Navigation />
+                <Navigation pageNumber={this.props.photos.length} onUserClick={this.changePage.bind(this)} active={this.state.page} />
             </div>
         );
     }
 }
 
-export default Carousel;
+Carousel.defaultProps = {
+    photos: []
+}
