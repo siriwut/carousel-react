@@ -1,0 +1,7 @@
+{
+  "generator-react-webpack": {
+    "appName": "carouselReact",
+    "style": "sass",
+    "postcss": false
+  }
+}

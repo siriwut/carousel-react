@@ -1,0 +1,126 @@
+/* Base Application Styles */
+
+body {
+    color: #000;
+    background: #fff;
+}
+
+.index {
+    width: 100%;
+}
+
+.content {
+    width: 700px;
+    margin: 0 auto 0 auto;
+    padding: 10px 10px 10px 10px;
+}
+
+.carousel {
+    position: relative;
+    height: 350px;
+    /*background: url("http://cdn.playbuzz.com/cdn/0079c830-3406-4c05-a5c1-bc43e8f01479/7dd84d70-768b-492b-88f7-a6c70f2db2e9.jpg");*/
+    /*background-size: 700px 350px;*/
+    -webkit-box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+
+/** Slide **/
+
+.slide {}
+
+.slide .photo {
+    width: 700px;
+    height: 350px;
+}
+
+
+/** Caption **/
+
+.caption {
+    color: #fff;
+    background: #000;
+    opacity: 0.6;
+    filter: alpha(opacity=60);
+}
+
+.carousel .caption {
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    bottom: 0;
+}
+
+.caption .caption-text {
+    margin: 10px;
+}
+
+
+/** Navigation **/
+
+.carousel .navigation {
+    position: absolute;
+    bottom: 10px;
+    padding: 0 5px 0 5px;
+    margin: 0 auto 0 auto;
+    text-align: center;
+    left: 0;
+    right: 0;
+}
+
+.navigation .navigation-btn {
+    padding: 2px 2px 4px 2px;
+    display: inline-block;
+}
+
+.navigation-btn .navigation-page {
+    display: inline-block;
+    background: #000;
+    border: 1px solid #676664;
+    width: 7px;
+    height: 7px;
+    cursor: pointer;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    opacity: 0.7;
+    filter: alpha(opacity=70);
+}
+
+.navigation-page:hover {
+    background: #fff;
+}
+
+.navigation-page.active {
+    background: #fff;
+}
+
+
+/** Dev Border **/
+
+.border {
+    border-width: 1px;
+    border-style: solid;
+}
+
+.border.-black {
+    border-color: black;
+}
+
+.border.-red {
+    border-color: red;
+}
+
+.border.-green {
+    border-color: green;
+}
+
+.border.-blue {
+    border-color: blue;
+}
+
+.border.-yellow {
+    border-color: yellow;
+}
