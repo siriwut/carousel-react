@@ -22,7 +22,7 @@ export default class Carousel extends React.Component {
     }
 
     componentDidMount() {
-        this.interval = setInterval(this.tick.bind(this), 2000);
+        this.interval = setInterval(this.tick.bind(this), this.props.interval);
     }
 
     componentWillUnmount() {
@@ -30,16 +30,21 @@ export default class Carousel extends React.Component {
     }
 
     render() {
+
         return (
             <div className="carousel" >
                 <Slide photos={this.props.photos} page={this.state.page} />
-                <Caption />
-                <Navigation pageNumber={this.props.photos.length} onUserClick={this.changePage.bind(this)} active={this.state.page} />
+                <Caption text={this.props.photos[this.state.page].caption} />
+                <Navigation 
+                pageNumber={this.props.photos.length} 
+                onUserClick={this.changePage.bind(this)} 
+                active={this.state.page} />
             </div>
         );
     }
 }
 
 Carousel.defaultProps = {
-    photos: []
+    photos: [],
+    interval: 3000
 }
